@@ -1,0 +1,145 @@
+/* GENERAL */
+:root {
+	--darkColor: #14213d;
+	--lighColor: #e5e5e5;
+	--lightOrangeColor: #fca311;
+	--darkOrangeColor: #d48608;
+}
+
+body {
+	background-color: var(--darkColor);
+	color: #e5e5e5;
+}
+
+.modal-content {
+	color: var(--darkColor);
+}
+
+/* BUTTON */
+.myBtn,
+.myBtn-dark {
+	max-width: fit-content;
+}
+
+.myBtn-dark,
+.myBtn-dark:active,
+.myBtn-dark:focus {
+	background-color: var(--darkColor);
+	border: 1px solid var(--lightOrangeColor);
+	color: var(--lightOrangeColor);
+	box-shadow: none;
+}
+
+.myBtn-dark:focus:hover,
+.myBtn-dark:active:hover {
+	color: var(--lighColor);
+}
+
+.myBtn-dark:hover {
+	background-color: var(--darkOrangeColor);
+	border: 1px solid var(--darkOrangeColor);
+}
+
+.myBtn,
+.myBtn:active,
+.myBtn:focus {
+	background-color: var(--lightOrangeColor);
+	border: none;
+	color: var(--darkColor);
+	box-shadow: none;
+}
+
+.myBtn:focus:hover,
+.myBtn:active:hover {
+	color: var(--lighColor);
+}
+
+.myBtn:hover {
+	background-color: var(--darkOrangeColor);
+}
+
+/* POKEMON CARD COMPONENT */
+.pokemon-card {
+	border-radius: 2px;
+	cursor: pointer;
+	background: none;
+	border: none;
+	outline: none;
+	height: 25vw;
+	width: 25vw;
+	max-width: 150px;
+	max-height: 150px;
+}
+
+.pokemon-card.flipped .inner {
+	transform: rotateY(180deg);
+}
+
+.inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	transition: 0.6s cubic-bezier(0.38, 0.02, 0.09, 1.66) all;
+}
+
+.pokemon-card .front,
+.pokemon-card .back {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 8px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	backface-visibility: hidden;
+}
+
+.pokemon-card .front {
+	color: red;
+	background: #ddd;
+	transform: rotateY(180deg);
+}
+
+.pokemon-card .back {
+	background: var(--lightOrangeColor);
+	font-size: 100px;
+	transition: 0.3s ease all;
+}
+
+.front img {
+	width: 100%;
+	height: 100%;
+	max-width: 100px;
+	max-height: 100px;
+}
+
+/* GAMEBOARD */
+.gameBoard {
+	max-width: 600px;
+	display: grid;
+	grid-template: repeat(3, 1fr);
+	gap: 10px;
+}
+
+/* LOADER */
+.backdropLoader {
+	z-index: 250;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	background-color: rgba(0, 0, 0, 0.6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.mySpinner {
+	height: 3em;
+	width: 3em;
+	font-size: xx-large;
+}
